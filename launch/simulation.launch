@@ -11,7 +11,7 @@
         <arg name="debug" value="false"/>
     </include>
 
-    <group if="$(eval arg('rviz') == 'true')">
+    <group if="$(arg rviz)">
         <node name="rviz" pkg="rviz" type="rviz" args="-d $(find recruitment24_nav_task)/rviz_config.rviz" output="screen"/>
     </group>
 
