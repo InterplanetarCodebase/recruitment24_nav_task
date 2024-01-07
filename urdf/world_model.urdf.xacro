@@ -1,0 +1,439 @@
+<?xml version="1.0"?>
+<robot name="nav_world"
+    xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Define your links and visuals here -->
+    <link name="base_link"/>
+    <joint name="base__floor" type="fixed">
+        <parent link="base_link"/>
+        <child link="floor_link"/>
+        <origin xyz="0.0 0.0 0.05" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="floor_link">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="2.5 2.5 0.01"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="2.5 2.5 0.01"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="10.0"/>
+            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    <joint name="floor_circle1" type="fixed">
+        <parent link="floor_link"/>
+        <child link="circle1_link"/>
+        <origin xyz="0.0 0.0 0.00499" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="circle1_link">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius=".2" length="0.0001"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius=".2" length="0"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="10.0"/>
+            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    <joint name="floor_circle2" type="fixed">
+        <parent link="floor_link"/>
+        <child link="circle2_link"/>
+        <origin xyz="0.21 0.74 0.00499" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="circle2_link">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius=".2" length="0.0001"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius=".2" length="0"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="10.0"/>
+            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    <joint name="floor_circle3" type="fixed">
+        <parent link="floor_link"/>
+        <child link="circle3_link"/>
+        <origin xyz="0.79 0.2 0.00499" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="circle3_link">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius=".2" length="0.0001"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius=".2" length="0"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="10.0"/>
+            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+    </link>
+    <joint name="floor_circle4" type="fixed">
+        <parent link="floor_link"/>
+        <child link="circle4_link"/>
+        <origin xyz="-0.8 -0.21 0.00499" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="circle4_link">
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius=".2" length="0.0001"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+            </material>
+            <collision>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                    <cylinder radius=".2" length="0"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <mass value="10.0"/>
+                <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+            </inertial>
+        </visual>
+    </link>
+
+
+    <joint name="floor_square1" type="fixed">
+        <parent link="floor_link"/>
+        <child link="square1_link"/>
+        <origin xyz="-0.55 0.65 0.00499" rpy="0.0 0.0 0.0"/>
+    </joint>
+    
+    <link name="square1_link">
+        <inertial>
+            <mass value="10.0"/>
+            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.4 0.4 0.0001"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.4 0.4 0"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="floor_square2" type="fixed">
+        <parent link="floor_link"/>
+        <child link="square2_link"/>
+        <origin xyz="0.83 0.87 0.00499" rpy="0.0 0.0 0.0"/>
+    </joint>
+    
+    <link name="square2_link">
+        <inertial>
+            <mass value="10.0"/>
+            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.4 0.4 0.0001"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.4 0.4 0"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="floor_square3" type="fixed">
+        <parent link="floor_link"/>
+        <child link="square3_link"/>
+        <origin xyz="0.41 -0.59 0.00499" rpy="0.0 0.0 0.0"/>
+    </joint>
+    
+    <link name="square3_link">
+        <inertial>
+            <mass value="10.0"/>
+            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.4 0.4 0.0001"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.4 0.4 0"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="floor_square4" type="fixed">
+        <parent link="floor_link"/>
+        <child link="square4_link"/>
+        <origin xyz="-0.7 -0.89 0.00499" rpy="0.0 0.0 0.0"/>
+    </joint>
+    
+    <link name="square4_link">
+        <inertial>
+            <mass value="10.0"/>
+            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.4 0.4 0.0001"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.4 0.4 0"/>
+            </geometry>
+        </collision>
+    </link>
+    
+    <!-- walls -->
+    
+    <joint name="floor_wallx1" type="fixed">
+        <parent link="floor_link"/>
+        <child link="wall_x1"/>
+        <origin xyz="1.25 0.0 0.05" rpy="0.0 0.0 0.0"/>
+    </joint>
+    <link name="wall_x1">
+        <inertial>
+            <mass value="10.0"/>
+            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.01 2.5 0.1"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.01 2.5 0.1"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="floor_wallx2" type="fixed">
+        <parent link="floor_link"/>
+        <child link="wall_x2"/>
+        <origin xyz="-1.25 0.0 0.05" rpy="0.0 0.0 0.0"/>
+    </joint>
+    <link name="wall_x2">
+        <inertial>
+            <mass value="10.0"/>
+            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.01 2.5 0.1"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.01 2.5 0.1"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="floor_wally1" type="fixed">
+        <parent link="floor_link"/>
+        <child link="wall_y1"/>
+        <origin xyz="0.0 1.25 0.05" rpy="0.0 0.0 0.0"/>
+    </joint>
+    <link name="wall_y1">
+        <inertial>
+            <mass value="10.0"/>
+            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="2.5 0.01 0.1"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="2.5 0.01 0.1"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="floor_wally2" type="fixed">
+        <parent link="floor_link"/>
+        <child link="wall_y2"/>
+        <origin xyz="0.0 -1.25 0.05" rpy="0.0 0.0 0.0"/>
+    </joint>
+    <link name="wall_y2">
+        <inertial>
+            <mass value="10.0"/>
+            <inertia ixx="0.015" iyy="0.0375" izz="0.0375" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="2.5 0.01 0.1"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="2.5 0.01 0.1"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- gazebo tags for every link that has a visual tag -->
+    <gazebo reference="floor_link">
+        <material>
+            Gazebo/White
+        </material>
+    </gazebo>
+
+    <gazebo reference="circle1_link">
+        <material>
+            Gazebo/Red
+        </material>
+    </gazebo>
+    <gazebo reference="circle2_link">
+        <material>
+            Gazebo/Red
+        </material>
+    </gazebo>
+    <gazebo reference="circle3_link">
+        <material>
+            Gazebo/Red
+        </material>
+    </gazebo>
+    <gazebo reference="circle4_link">
+        <material>
+            Gazebo/Red
+        </material>
+    </gazebo>
+    
+    <gazebo reference="square1_link">
+        <material>
+            Gazebo/Green
+        </material>
+    </gazebo>
+    <gazebo reference="square2_link">
+        <material>
+            Gazebo/Green
+        </material>
+    </gazebo>
+    <gazebo reference="square3_link">
+        <material>
+            Gazebo/Green
+        </material>
+    </gazebo>
+    <gazebo reference="square4_link">
+        <material>
+            Gazebo/Green
+        </material>
+    </gazebo>
+
+    <gazebo reference="wall_x1">
+        <material>
+            Gazebo/Red
+        </material>
+    </gazebo>
+    <gazebo reference="wall_x2">
+        <material>
+            Gazebo/Red
+        </material>
+    </gazebo>
+    <gazebo reference="wall_y1">
+        <material>
+            Gazebo/Red
+        </material>
+    </gazebo>
+    <gazebo reference="wall_y2">
+        <material>
+            Gazebo/Red
+        </material>
+    </gazebo>
+</robot>

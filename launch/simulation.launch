@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="rviz" default="false"/>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/empty.world"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="false"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+    </include>
+
+    <group if="$(eval arg('rviz') == 'true')">
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find nav_task)/rviz_config.rviz" output="screen"/>
+    </group>
+
+    <param name="nav_world_description" command="xacro '$(find nav_task)/urdf/world_model.urdf.xacro'"/>
+    <arg name="world_pose" value="-x 0 -y 0 -z 0" />
+    <node args="-urdf -param nav_world_description -model nav_world $(arg world_pose)" name="spawn_world" output="screen" pkg="gazebo_ros" respawn="false" type="spawn_model" />
+
+    <!-- For now no real camera is used -->
+    <!-- <node name="cv_camera" pkg="cv_camera" type="cv_camera_node" output="screen"/> -->
+
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find nav_task)/urdf/spy_turtle.urdf.xacro" />
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model spy_turtle -x 0 -y 0 -z 0.03 -param robot_description" launch-prefix="bash -c 'sleep 2; $0 $@' "/>
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+</launch>
