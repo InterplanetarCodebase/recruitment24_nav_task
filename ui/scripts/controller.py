@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-    
 import rospy 
 from kivy.app import App
 from kivy.lang import Builder
@@ -54,4 +52,10 @@ if __name__ == '__main__':
 
     ############### FUNCTIONALITY FOR CONTROLLER NODE #################
     rospy.init_node('navigation_gui')
-    NavigationGUIApp().run()
+    
+    try:
+        NavigationGUIApp().run()
+    except KeyboardInterrupt:
+        App.get_running_app().stop()
+        pass
+
