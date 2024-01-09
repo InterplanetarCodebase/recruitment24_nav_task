@@ -27,7 +27,7 @@ else
   python3-pip \
   ros-noetic-turtlebot3 -y
   git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
-  git clone https://github.com/TanvirTaaha/recruitment24_nav_task.git
+  git clone https://github.com/InterplanetarCodebase/recruitment24_nav_task.git
   cd ..
 
   catkin_make
