@@ -26,4 +26,5 @@
     <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model spy_turtle -x 0 -y 0 -z 0.03 -param robot_description" launch-prefix="bash -c 'sleep 2; $0 $@' "/>
 
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+    
 </launch>

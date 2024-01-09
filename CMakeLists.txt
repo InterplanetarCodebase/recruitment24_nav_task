@@ -12,6 +12,10 @@ find_package(catkin REQUIRED
     gazebo_ros
     turtlebot3_description
     turtlebot3_gazebo
+    std_msgs
+    geometry_msgs
+    sensor_msgs
+    nav_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -161,7 +165,12 @@ include_directories(
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
-  ui/scripts/controller.py
+  ui/controller.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+catkin_install_python(PROGRAMS
+  scripts/checker.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
