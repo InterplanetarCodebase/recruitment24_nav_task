@@ -7,10 +7,11 @@ if [ -d "task_ws" ]; then
   cd task_ws
   source devel/setup.bash
   
-  roslaunch recruitment24_nav_task simulation.launch &
+  roslaunch recruitment24_nav_task simulation.launch & 
+  source kivy_venv/bin/activate
 
   echo "DONE --------------------------------- 1"
-  source kivy_venv/bin/activate
+  
   python3 src/recruitment24_nav_task/ui/controller.py &
   python3 src/recruitment24_nav_task/scripts/checker.py &
   rosbag record -O nav_output.bag /odom /position_status &
