@@ -49,8 +49,6 @@ else
   
   roslaunch recruitment24_nav_task simulation.launch &
 
-  echo "DONE --------------------------------- 8"
-
   python3 -m pip install --upgrade pip setuptools virtualenv
   
   echo "DONE --------------------------------- 9"
