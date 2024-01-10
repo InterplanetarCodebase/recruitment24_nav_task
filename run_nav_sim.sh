@@ -9,7 +9,7 @@ if [ -d "task_ws" ]; then
   
   roslaunch recruitment24_nav_task simulation.launch &
 
-	echo "DONE --------------------------------- 1"
+  echo "DONE --------------------------------- 1"
   source kivy_venv/bin/activate
   python3 src/recruitment24_nav_task/ui/controller.py &
   python3 src/recruitment24_nav_task/scripts/checker.py &
@@ -49,7 +49,7 @@ else
   
   roslaunch recruitment24_nav_task simulation.launch &
 
-	echo "DONE --------------------------------- 8"
+  echo "DONE --------------------------------- 8"
 
   python3 -m pip install --upgrade pip setuptools virtualenv
   
